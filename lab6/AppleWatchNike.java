@@ -83,17 +83,18 @@ public class AppleWatchNike extends AppleWatch {
         return super.toString();
     }
 
-
     public void displayRunningStats() {
-        System.out.println("Pace: " + this.getPace() + " min/km, distance: " + this.getDistance() + "km., time:" + this.getTime());
+        System.out.println(
+                "Pace: " + this.getPace() + " min/km, distance: " + this.getDistance() + "km., time:" + this.getTime());
     }
 
     public void displayHeartRates() {
-        System.out.println("Avg heart rate: " + this.getAvgHeartRate() + "bpm, max heart rate:" + this.getMaxAvgHeartRate() + " bpm");
+        System.out.println("Avg heart rate: " + this.getAvgHeartRate() + "bpm, max heart rate:"
+                + this.getMaxAvgHeartRate() + " bpm");
     }
 
     public void displaySleepHours() {
         System.out.println("Sleep hours:" + this.getSleepHours() + " hours");
     }
-    
+
 }
