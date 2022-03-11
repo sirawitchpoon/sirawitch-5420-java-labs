@@ -44,9 +44,6 @@ public class MobileDeviceFormV6 extends MobileDeviceFormV5 {
         msw.setFrameFeatures();
     }
 
-    protected void addMenus() {
-        super.addMenus();
-    }
 
     protected void addComponents() {
         super.addComponents();
@@ -56,6 +53,7 @@ public class MobileDeviceFormV6 extends MobileDeviceFormV5 {
         featurePanel.setLayout(new GridLayout(3,1));
         infoPanel.setLayout(new GridLayout(2, 1));
         featureLabel = new JLabel("Features:");
+        featureLabel.setFont(font14Bold);
         featureList = new JList(featureArray);
         featureList.setFont(font14Bold);
         featurePanel.add(featureLabel);
@@ -66,18 +64,6 @@ public class MobileDeviceFormV6 extends MobileDeviceFormV5 {
 
     public MobileDeviceFormV6(String title) {
         super(title);
-    }
-
-    protected void setFrameFeatures() {
-        super.setFrameFeatures();
-    }
-
-    protected void setFontsColor() {
-        super.setFontsColor();
-    }
-
-    protected void setFormValues() {
-        super.setFormValues();
     }
     
     protected class ReadImage<BufferedImage> extends JPanel {

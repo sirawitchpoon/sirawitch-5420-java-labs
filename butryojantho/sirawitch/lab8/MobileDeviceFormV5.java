@@ -45,10 +45,6 @@ public class MobileDeviceFormV5 extends MobileDeviceFormV4 {
         super.setFrameFeatures();
     }
 
-    protected void addMenus() {
-        super.addMenus();
-    }
-
     @Override
     protected void addComponents() {
         super.addComponents();

@@ -36,10 +36,6 @@ public class MobileDeviceFormV4 extends MobileDeviceFormV3 {
         msw.setFrameFeatures();
     }
 
-    protected void setFrameFeatures() {
-        super.setFrameFeatures();
-    }
-
     public static void main(String[] args) {
         SwingUtilities.invokeLater(new Runnable() {
             public void run() {
