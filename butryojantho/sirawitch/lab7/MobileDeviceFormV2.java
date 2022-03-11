@@ -16,7 +16,7 @@ import javax.swing.*;
 public class MobileDeviceFormV2 extends MobileDeviceFormV1 {
 
     protected JComboBox typeCb;
-    protected JPanel reviewPanel;
+    protected JPanel reviewPanel,infoPanel;
     protected JTextArea reviewTextArea;
     protected JLabel typeLabel, reviewLabel;
 
@@ -52,6 +52,8 @@ public class MobileDeviceFormV2 extends MobileDeviceFormV1 {
         mainPanel.setLayout(new GridLayout(7, 2)); // set new layout for main panel
         reviewPanel = new JPanel(); // create review panel
         reviewPanel.setLayout(new GridLayout(2, 1)); // set review panel layout
+        infoPanel = new JPanel();
+        infoPanel.setLayout(new GridLayout(1, 1));
         typeLabel = new JLabel("Type:"); // create type label and set label as "Type:"
         reviewLabel = new JLabel("Review:"); // create review label and set label as "Review:"
         typeCb = new JComboBox(); // create combobox for type
@@ -68,7 +70,8 @@ public class MobileDeviceFormV2 extends MobileDeviceFormV1 {
         mainPanel.add(typeCb); // add type's combobox to main panel
         reviewPanel.add(reviewLabel); // add review's label to review's panel
         reviewPanel.add(reviewTextArea); // add review's textarea to review's panel
-        this.add(reviewPanel, BorderLayout.CENTER); // add review panel to frame set it to Center
+        infoPanel.add(reviewPanel);
+        this.add(infoPanel, BorderLayout.CENTER); // add review panel to frame set it to Center
     }
 
 }

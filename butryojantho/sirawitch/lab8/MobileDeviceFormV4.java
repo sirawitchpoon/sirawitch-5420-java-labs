@@ -1,3 +1,14 @@
+/**
+ * MobileDeviceFormV4 program
+ * In this program, it add an icon for File and menu and add submenu of color and size
+ * 
+ * Author: Sirawitch Butryojantho
+ * ID: 643040542-0
+ * Sec:2
+ * Date: 11/03/2022
+ * 
+ */
+
 package butryojantho.sirawitch.lab8;
 
 import java.awt.*;
@@ -25,6 +36,10 @@ public class MobileDeviceFormV4 extends MobileDeviceFormV3 {
         msw.setFrameFeatures();
     }
 
+    protected void setFrameFeatures() {
+        super.setFrameFeatures();
+    }
+
     public static void main(String[] args) {
         SwingUtilities.invokeLater(new Runnable() {
             public void run() {
@@ -35,12 +50,26 @@ public class MobileDeviceFormV4 extends MobileDeviceFormV3 {
 
     protected void addMenus() {
         super.addMenus();
+        updateMenuIcon();
+        addSubMenus();
+    }
+
+    protected void addSubMenus() {
         redMI = new JMenuItem("Red");
         greenMI = new JMenuItem("Green");
         blueMI = new JMenuItem("Blue");
         size16MI = new JMenuItem("16");
         size20MI = new JMenuItem("20");
         size24MI = new JMenuItem("24");
+        colorMenu.add(redMI);
+        colorMenu.add(greenMI);
+        colorMenu.add(blueMI);
+        sizeMenu.add(size16MI);
+        sizeMenu.add(size20MI);
+        sizeMenu.add(size24MI);
+    }
+
+    protected void updateMenuIcon() {
         newMenuIcon = new ImageIcon("Images/new.png");
         openMenuIcon = new ImageIcon("Images/open.png");
         saveMenuIcon = new ImageIcon("Images/save.png");
@@ -49,11 +78,5 @@ public class MobileDeviceFormV4 extends MobileDeviceFormV3 {
         openItem.setIcon(openMenuIcon);
         saveItem.setIcon(saveMenuIcon);
         exitItem.setIcon(exitMenuIcon);
-        colorMenu.add(redMI);
-        colorMenu.add(greenMI);
-        colorMenu.add(blueMI);
-        sizeMenu.add(size16MI);
-        sizeMenu.add(size20MI);
-        sizeMenu.add(size24MI);
     }
 }
