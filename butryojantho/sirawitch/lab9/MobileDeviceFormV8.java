@@ -7,8 +7,6 @@ import javax.swing.*;
 
 public class MobileDeviceFormV8 extends MobileDeviceFormV7 implements ItemListener {
 
-    protected Checkbox osCheck;
-
     public MobileDeviceFormV8(String title) {
         super(title);
     }
@@ -29,6 +27,7 @@ public class MobileDeviceFormV8 extends MobileDeviceFormV7 implements ItemListen
         msw.setFrameFeatures();
     }
 
+    @Override
     protected void addListeners() {
         super.addListeners();
         android.addItemListener(this);
