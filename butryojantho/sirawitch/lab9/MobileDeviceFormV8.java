@@ -6,12 +6,11 @@ import java.awt.event.*;
 import javax.swing.*;
 
 public class MobileDeviceFormV8 extends MobileDeviceFormV7 implements ItemListener {
-    
+
     protected Checkbox osCheck;
 
     public MobileDeviceFormV8(String title) {
         super(title);
-        //TODO Auto-generated constructor stub
     }
 
     public static void main(String[] args) {
@@ -39,14 +38,14 @@ public class MobileDeviceFormV8 extends MobileDeviceFormV7 implements ItemListen
 
     @Override
     public void itemStateChanged(ItemEvent e) {
-        if(e.getStateChange() == ItemEvent.SELECTED) {
+        if (e.getStateChange() == ItemEvent.SELECTED) {
             Object sorce = e.getSource();
-            if(sorce == android) {
-                JOptionPane.showMessageDialog(null, 
-                osLabel.getText() + " is updated to Android");
+            if (sorce == android) {
+                JOptionPane.showMessageDialog(null,
+                        osLabel.getText() + " is updated to Android");
             } else if (sorce == ios) {
-                JOptionPane.showMessageDialog(null, 
-                osLabel.getText() + " is updated to iOS");
+                JOptionPane.showMessageDialog(null,
+                        osLabel.getText() + " is updated to iOS");
             } else if (sorce == typeCb) {
                 if (typeCb.getSelectedItem().equals("Phone")) {
                     JOptionPane.showMessageDialog(null, "Type is updated to Phone");
@@ -58,18 +57,6 @@ public class MobileDeviceFormV8 extends MobileDeviceFormV7 implements ItemListen
             }
         }
 
-        // if (android.isSelected()) {
-        //     JOptionPane.showMessageDialog(null, osLabel.getText() + "is updated to Android");
-        // } else if (ios.isSelected()) {
-        //     JOptionPane.showMessageDialog(null, osLabel.getText() + "is updated to iOS");
-        // } else if (typeCb.getSelectedItem().equals("Phone")) {
-        //     JOptionPane.showMessageDialog(null, "Type is updated to Phone");
-        // } else if (typeCb.getSelectedItem().equals("Tablet")) {
-        //     JOptionPane.showMessageDialog(null, "Type is updated to Tablet");
-        // } else if (typeCb.getSelectedItem().equals("Smart Watch")) {
-        //     JOptionPane.showMessageDialog(null, "Type is updated to Smart Watch");
-        // }
-        
     }
-    
+
 }
