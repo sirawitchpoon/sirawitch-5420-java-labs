@@ -15,8 +15,9 @@ import javax.swing.*;
 
 public class MobileDeviceFormV2 extends MobileDeviceFormV1 {
 
+    protected String reviewString = "The iPhone 13’s brighter display, longer battery life and powerful cameras make it the best iPhone for the money. But we wish it had faster charging and the iPhone 13 Pro’s adaptive 120Hz display.";
     protected JComboBox typeCb;
-    protected JPanel reviewPanel,infoPanel;
+    protected JPanel reviewPanel, infoPanel;
     protected JTextArea reviewTextArea;
     protected JLabel typeLabel, reviewLabel;
 
@@ -49,11 +50,11 @@ public class MobileDeviceFormV2 extends MobileDeviceFormV1 {
     @Override
     protected void addComponents() {
         super.addComponents(); // call method addComponents() for this superclass
-        mainPanel.setLayout(new GridLayout(7, 2)); // set new layout for main panel
+        mainPanel.setLayout(new GridLayout(0, 2)); // set new layout for main panel
         reviewPanel = new JPanel(); // create review panel
-        reviewPanel.setLayout(new GridLayout(2, 1)); // set review panel layout
+        reviewPanel.setLayout(new GridLayout(0, 1)); // set review panel layout
         infoPanel = new JPanel();
-        infoPanel.setLayout(new GridLayout(1, 1));
+        infoPanel.setLayout(new GridLayout(0, 1));
         typeLabel = new JLabel("Type:"); // create type label and set label as "Type:"
         reviewLabel = new JLabel("Review:"); // create review label and set label as "Review:"
         typeCb = new JComboBox(); // create combobox for type
@@ -61,9 +62,7 @@ public class MobileDeviceFormV2 extends MobileDeviceFormV1 {
         typeCb.addItem("Tablet"); // add String to combobox
         typeCb.addItem("Smart Watch"); // add String to combobox
         reviewTextArea = new JTextArea(5, 30); // create textarea for review
-        reviewTextArea.setText(
-                "The iPhone 13’s brighter display, longer battery life and powerful cameras make it the best iPhone for the money. But we wish it had faster charging and the iPhone 13 Pro’s adaptive 120Hz display.");
-        // set text for textarea
+        reviewTextArea.setText(reviewString);// set text for textarea
         reviewTextArea.setLineWrap(true); // if line that is too long will be “wrapped” onto the next line
         reviewTextArea.setWrapStyleWord(true); // make it only wrap when there is a space or something
         mainPanel.add(typeLabel); // add type's label to main panel
