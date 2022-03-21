@@ -1,3 +1,13 @@
+/**
+ * MobileDeviceFormV7
+ * 
+ * add action listener to cancel and ok button
+ * 
+ * Author: Sirawitch Butryojantho
+ * Sec: 2
+ * ID: 643040542-0
+ */
+
 package butryojantho.sirawitch.lab9;
 
 import java.awt.*;
@@ -14,6 +24,7 @@ public class MobileDeviceFormV7 extends MobileDeviceFormV6 implements ActionList
             }
         });
     }
+    //run GUI
 
     public static void createAndShowGUI() {
         MobileDeviceFormV7 msw = new MobileDeviceFormV7("Mobile Device Form V7");
@@ -22,21 +33,24 @@ public class MobileDeviceFormV7 extends MobileDeviceFormV6 implements ActionList
         msw.addListeners();
         msw.setFrameFeatures();
     }
+    //create GUI
 
     protected void addListeners() {
         okButton.addActionListener(this);
         cancelButton.addActionListener(this);
     }
+    //add actionlistener to cancel and ok button
 
     public MobileDeviceFormV7(String title) {
         super(title);
     }
+    //set the title of this window
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        Object src = e.getSource();
-        if (src == okButton) {
-            String brandMs = brandLabel.getText() + " " + brandText.getText();
+        Object src = e.getSource(); //get source from user
+        if (src == okButton) { //condition for ok button
+            String brandMs = brandLabel.getText() + " " + brandText.getText(); 
             String modelMs = modelLabel.getText() + " " + modelText.getText();
             String colorMs = colorLabel.getText() + " " + colorText.getText();
             String weightMs = weightLabel.getText() + " " + weightText.getText();
@@ -48,6 +62,7 @@ public class MobileDeviceFormV7 extends MobileDeviceFormV6 implements ActionList
             String reviewMs = reviewLabel.getText() + " " + reviewTextArea.getText();
             String featureMs = featureLabel.getText();
             String featureSelected = featureList.getSelectedValuesList().toString();
+            //get the result from user
             JOptionPane.showMessageDialog(null,
                     brandMs + "\n"
                             + modelMs + "\n"
@@ -59,7 +74,8 @@ public class MobileDeviceFormV7 extends MobileDeviceFormV6 implements ActionList
                             + reviewMs + "\n"
                             + featureMs + "\n"
                             + featureSelected);
-        } else if (src == cancelButton) {
+            //show message dialog
+        } else if (src == cancelButton) {//condition for cancel button
             brandText.setText("");
             modelText.setText("");
             colorText.setText("");
@@ -70,6 +86,7 @@ public class MobileDeviceFormV7 extends MobileDeviceFormV6 implements ActionList
             reviewTextArea.setText("");
             featureList.clearSelection();
         }
+        //restore everything
     }
 
 }
