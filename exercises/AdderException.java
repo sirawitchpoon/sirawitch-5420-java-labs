@@ -1,5 +1,18 @@
 package exercises;
 
+/**
+ * AdderException 
+ * This Adder is supposed to add two integers
+ * It can handle when inputs are not integers
+ * It can handle when the number of input arguments is not two
+ * 
+ * Author: Sirawitch Butryojantho
+ * Sec: 2
+ * ID: 643040542-0
+ * 
+ * 
+ */
+
 public class AdderException {
     
     public static void main(String[] args) {
