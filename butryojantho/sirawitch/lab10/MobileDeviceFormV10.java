@@ -1,3 +1,17 @@
+/**
+ * MobileDeviceFormV10
+ * 
+ * SetForeground color for JTextField, JTextArea and JRadioButton when selecting menus of various colors
+ * Set FontSize for JTextField, JTextArea and JRadioButton when selecting menus of various sizes
+ * OpenFile Chooser and dialog box when Open MenuItem is chosen
+ * Cancel dialog box when Cancel MenuItem is chosen
+ * 
+ * Author: Sirawitch Butryojantho
+ * ID: 643040542-0
+ * Sec: 2
+ * 
+ */
+
 package butryojantho.sirawitch.lab10;
 
 import butryojantho.sirawitch.lab9.MobileDeviceFormV9;
@@ -11,6 +25,7 @@ public class MobileDeviceFormV10 extends MobileDeviceFormV9 {
     protected Font font16Plain = new Font("SansSerif", Font.PLAIN, 16);
     protected Font font20Plain = new Font("SansSerif", Font.PLAIN, 20);
     protected Font font24Plain = new Font("SansSerif", Font.PLAIN, 24);
+    // create new Fonts for different size
 
     public MobileDeviceFormV10(String title) {
         super(title);
@@ -47,6 +62,7 @@ public class MobileDeviceFormV10 extends MobileDeviceFormV9 {
         openItem.addActionListener(this);
         saveItem.addActionListener(this);
     }
+    // addActionListener for each JMenuItem
 
     @Override
     public void actionPerformed(ActionEvent e) {
@@ -61,6 +77,8 @@ public class MobileDeviceFormV10 extends MobileDeviceFormV9 {
             typeCb.setForeground(Color.red);
             reviewTextArea.setForeground(Color.red);
             featureList.setForeground(Color.red);
+            // set blue foreground color for each components
+
         } else if (e.getSource().equals(greenMI)) {
             brandText.setForeground(Color.green);
             modelText.setForeground(Color.green);
@@ -73,6 +91,8 @@ public class MobileDeviceFormV10 extends MobileDeviceFormV9 {
             typeCb.setForeground(Color.green);
             reviewTextArea.setForeground(Color.green);
             featureList.setForeground(Color.green);
+            // set green foreground color for each components
+
         } else if (e.getSource().equals(blueMI)) {
             brandText.setForeground(Color.blue);
             modelText.setForeground(Color.blue);
@@ -84,6 +104,8 @@ public class MobileDeviceFormV10 extends MobileDeviceFormV9 {
             typeCb.setForeground(Color.blue);
             reviewTextArea.setForeground(Color.blue);
             featureList.setForeground(Color.blue);
+            // set blue foreground color for each components
+
         } else if (e.getSource().equals(size16MI)) {
             brandText.setFont(font16Plain);
             modelText.setFont(font16Plain);
@@ -95,6 +117,9 @@ public class MobileDeviceFormV10 extends MobileDeviceFormV9 {
             typeCb.setFont(font16Plain);
             reviewTextArea.setFont(font16Plain);
             featureList.setFont(font16Plain);
+            // All text’s font sizes are changed to Serif, PLAIN, and size 16
+            // when the menu item 16 is selected
+
         } else if (e.getSource().equals(size20MI)) {
             brandText.setFont(font20Plain);
             modelText.setFont(font20Plain);
@@ -106,6 +131,9 @@ public class MobileDeviceFormV10 extends MobileDeviceFormV9 {
             typeCb.setFont(font20Plain);
             reviewTextArea.setFont(font20Plain);
             featureList.setFont(font20Plain);
+            // All text’s font sizes are changed to Serif, PLAIN, and size 20
+            // when the menu item 20 is selected
+
         } else if (e.getSource().equals(size24MI)) {
             brandText.setFont(font24Plain);
             modelText.setFont(font24Plain);
@@ -117,23 +145,45 @@ public class MobileDeviceFormV10 extends MobileDeviceFormV9 {
             typeCb.setFont(font24Plain);
             reviewTextArea.setFont(font24Plain);
             featureList.setFont(font24Plain);
+            // All text’s font sizes are changed to Serif, PLAIN, and size 24
+            // when the menu item 24 is selected
+
         } else if (e.getSource().equals(openItem)) {
             JFileChooser fileChooser = new JFileChooser();
-            int response = fileChooser.showOpenDialog(null);
+            // create new JFileChooser
+
+            int response = fileChooser.showOpenDialog(MobileDeviceFormV10.this);
+            // defind int variable to collect user response
+
             if (response == JFileChooser.APPROVE_OPTION) {
                 File file = new File(fileChooser.getSelectedFile().getName());
+                // create File object to collect selected file name
+
                 JOptionPane.showMessageDialog(null, "Opening: " + file);
+            // A dialog window shows a message after the user selects a file to open.
+
             } else if (response == JFileChooser.CANCEL_OPTION) {
                 JOptionPane.showMessageDialog(null, "Open command is canceled by user.");
+            // A dialog window shows a message after the user selects cancel's button or close JFileChooser window.
             }
+
         } else if (e.getSource().equals(saveItem)) {
             JFileChooser fileChooser = new JFileChooser();
-            int response = fileChooser.showOpenDialog(null);
+            // create new JFileChooser
+
+            int response = fileChooser.showSaveDialog(MobileDeviceFormV10.this);
+            // defind int variable to collect user response
+
             if (response == JFileChooser.APPROVE_OPTION) {
                 File file = new File(fileChooser.getSelectedFile().getAbsolutePath());
+                // create File object to collect selected file path
+
                 JOptionPane.showMessageDialog(null, "Save file as: " + file);
+                // A dialog window shows a message after the user types in a file name to save.
+                
             } else if (response == JFileChooser.CANCEL_OPTION) {
                 JOptionPane.showMessageDialog(null, "Save command is canceled by user.");
+                // A dialog window shows a message when the user selected the Cancel button.
             }
         }
     }
