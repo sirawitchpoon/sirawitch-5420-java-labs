@@ -43,6 +43,7 @@ public class MobileDeviceFormV13 extends MobileDeviceFormV12 {
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        super.actionPerformed(e);
         android.setActionCommand("Android");
         ios.setActionCommand("iOS");
         if (e.getSource().equals(okButton)) {

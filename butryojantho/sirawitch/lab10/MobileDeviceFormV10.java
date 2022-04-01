@@ -66,6 +66,7 @@ public class MobileDeviceFormV10 extends MobileDeviceFormV9 {
 
     @Override
     public void actionPerformed(ActionEvent e) {
+        super.actionPerformed(e);
         if (e.getSource().equals(redMI)) {
             brandText.setForeground(Color.red);
             modelText.setForeground(Color.red);
