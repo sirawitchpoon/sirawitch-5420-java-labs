@@ -78,6 +78,7 @@ public class MobileDeviceFormV12 extends MobileDeviceFormV11 {
 
     @Override
     protected void addListeners() {
+        super.addListeners();
         customColorItem.addActionListener(this);
         redMI.addActionListener(this);
         greenMI.addActionListener(this);
@@ -87,7 +88,6 @@ public class MobileDeviceFormV12 extends MobileDeviceFormV11 {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        super.actionPerformed(e);
         if (foreRBMenuItem.isSelected()) {
             if (e.getSource().equals(customColorItem)) {
                 Color customColor = JColorChooser.showDialog(this, "Choose Color", brandText.getForeground());
