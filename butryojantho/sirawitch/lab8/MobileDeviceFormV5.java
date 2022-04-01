@@ -68,6 +68,11 @@ public class MobileDeviceFormV5 extends MobileDeviceFormV4 {
     }
 
     protected void setFormValues() {
+        brandText.setText("Apple");
+        modelText.setText("iPad Air");
+        colorText.setText("Silver");
+        weightText.setText("0.469");
+        priceText.setText("24900.00");
         typeCb.setSelectedItem("Tablet");
         ios.setSelected(true);
         reviewTextArea.setText("The iPad Air is Apple's mid-range tablet and the current model features a new design with flat edges, the A14 Bionic chip,a USB-C port, Touch ID, a range of color options, and more.");
