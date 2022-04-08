@@ -56,7 +56,6 @@ public class MobileDeviceFormV13 extends MobileDeviceFormV12 {
                     (String) os.getSelection().getActionCommand(),
                     (String) typeCb.getSelectedItem());
             deviceList.add(dummyDevice);
-            deviceCount++;
             System.out.println(deviceList + "\n");
         }
     }
