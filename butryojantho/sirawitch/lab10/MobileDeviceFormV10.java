@@ -22,6 +22,7 @@ import java.io.*;
 
 public class MobileDeviceFormV10 extends MobileDeviceFormV9 {
 
+    protected JFileChooser fileChooser;
     protected Font font16Plain = new Font("SansSerif", Font.PLAIN, 16);
     protected Font font20Plain = new Font("SansSerif", Font.PLAIN, 20);
     protected Font font24Plain = new Font("SansSerif", Font.PLAIN, 24);
@@ -150,7 +151,7 @@ public class MobileDeviceFormV10 extends MobileDeviceFormV9 {
             // when the menu item 24 is selected
 
         } else if (e.getSource().equals(openItem)) {
-            JFileChooser fileChooser = new JFileChooser();
+            fileChooser = new JFileChooser();
             // create new JFileChooser
 
             int response = fileChooser.showOpenDialog(MobileDeviceFormV10.this);
@@ -169,7 +170,7 @@ public class MobileDeviceFormV10 extends MobileDeviceFormV9 {
             }
 
         } else if (e.getSource().equals(saveItem)) {
-            JFileChooser fileChooser = new JFileChooser();
+            fileChooser = new JFileChooser();
             // create new JFileChooser
 
             int response = fileChooser.showSaveDialog(MobileDeviceFormV10.this);
