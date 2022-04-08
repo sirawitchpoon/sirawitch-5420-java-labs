@@ -76,7 +76,6 @@ public class MobileDeviceFormV12 extends MobileDeviceFormV11 {
         // set Foreground Area is selected by default
     }
 
-    @Override
     protected void addListeners() {
         super.addListeners();
         customColorItem.addActionListener(this);

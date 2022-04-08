@@ -22,7 +22,7 @@ import java.io.*;
 
 public class MobileDeviceFormV10 extends MobileDeviceFormV9 {
 
-    protected JFileChooser fileChooser;
+    protected JFileChooser saveFileChooser, openFileChooser;
     protected Font font16Plain = new Font("SansSerif", Font.PLAIN, 16);
     protected Font font20Plain = new Font("SansSerif", Font.PLAIN, 20);
     protected Font font24Plain = new Font("SansSerif", Font.PLAIN, 24);
@@ -51,7 +51,6 @@ public class MobileDeviceFormV10 extends MobileDeviceFormV9 {
     }
     // create GUI
 
-    @Override
     protected void addListeners() {
         super.addListeners();
         redMI.addActionListener(this);
@@ -151,14 +150,14 @@ public class MobileDeviceFormV10 extends MobileDeviceFormV9 {
             // when the menu item 24 is selected
 
         } else if (e.getSource().equals(openItem)) {
-            fileChooser = new JFileChooser();
+            openFileChooser = new JFileChooser();
             // create new JFileChooser
 
-            int response = fileChooser.showOpenDialog(MobileDeviceFormV10.this);
+            int response = openFileChooser.showOpenDialog(MobileDeviceFormV10.this);
             // defind int variable to collect user response
 
             if (response == JFileChooser.APPROVE_OPTION) {
-                File file = new File(fileChooser.getSelectedFile().getName());
+                File file = new File(openFileChooser.getSelectedFile().getName());
                 // create File object to collect selected file name
 
                 JOptionPane.showMessageDialog(null, "Opening: " + file);
@@ -170,14 +169,14 @@ public class MobileDeviceFormV10 extends MobileDeviceFormV9 {
             }
 
         } else if (e.getSource().equals(saveItem)) {
-            fileChooser = new JFileChooser();
+            saveFileChooser = new JFileChooser();
             // create new JFileChooser
 
-            int response = fileChooser.showSaveDialog(MobileDeviceFormV10.this);
+            int response = saveFileChooser.showSaveDialog(MobileDeviceFormV10.this);
             // defind int variable to collect user response
 
             if (response == JFileChooser.APPROVE_OPTION) {
-                File file = new File(fileChooser.getSelectedFile().getAbsolutePath());
+                File file = new File(saveFileChooser.getSelectedFile().getAbsolutePath());
                 // create File object to collect selected file path
 
                 JOptionPane.showMessageDialog(null, "Save file as: " + file);

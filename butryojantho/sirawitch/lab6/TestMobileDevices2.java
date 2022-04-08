@@ -31,9 +31,3 @@ public class TestMobileDevices2 {
         System.out.println(mobileDevices); // print mobileDevices's list(sorted)
     }
 }
-
-class SortMobileDevicesByPrice implements Comparator<MobileDevice> {
-    public int compare(MobileDevice a, MobileDevice b) {
-        return (int) (a.getPrice() - b.getPrice());
-    }
-}
