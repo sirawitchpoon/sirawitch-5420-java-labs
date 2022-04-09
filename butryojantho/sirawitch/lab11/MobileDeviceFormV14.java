@@ -1,3 +1,16 @@
+/**
+ * MobileDeviceFormV13
+ * 
+ * Add Display menu item to display added devices
+ * Add Sort menu item to sort the added devices 
+ * Add Search menu iten to display an input dialog by enter it's model name
+ * Add Remove menu item to remove device by enter it's model name
+ * 
+ * Author: Sirawitch Butryojantho
+ * ID: 643040542-0
+ * Sec:2
+ */
+
 package butryojantho.sirawitch.lab11;
 
 import java.awt.event.*;
@@ -15,9 +28,8 @@ public class MobileDeviceFormV14 extends MobileDeviceFormV13 {
 
     public MobileDeviceFormV14(String title) {
         super(title);
-        deviceList = new ArrayList<MobileDeviceV2>();
-        // TODO Auto-generated constructor stub
     }
+    //set the title of the window
 
     public static void main(String[] args) {
         SwingUtilities.invokeLater(new Runnable() {
@@ -50,6 +62,8 @@ public class MobileDeviceFormV14 extends MobileDeviceFormV13 {
         deviceMenu.add(removeMenuItem);
         menuBar.add(deviceMenu);
     }
+    //add menu Devices
+    //add menu item Display,Sort,Search,Remove
 
     protected void addListeners() {
         super.addListeners();
@@ -58,6 +72,7 @@ public class MobileDeviceFormV14 extends MobileDeviceFormV13 {
         searchMenuItem.addActionListener(this);
         removeMenuItem.addActionListener(this);
     }
+    //add Actionlistener to these menuitem
 
     @Override
     public void actionPerformed(ActionEvent e){
