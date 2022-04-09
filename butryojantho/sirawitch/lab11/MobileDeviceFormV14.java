@@ -2,8 +2,11 @@ package butryojantho.sirawitch.lab11;
 
 import java.awt.event.*;
 import java.util.ArrayList;
+import java.util.Collections;
 
 import javax.swing.*;
+
+import butryojantho.sirawitch.lab6.*;
 
 public class MobileDeviceFormV14 extends MobileDeviceFormV13 {
 
@@ -34,7 +37,6 @@ public class MobileDeviceFormV14 extends MobileDeviceFormV13 {
     }
     // create GUI
 
-    @Override
     protected void addMenus() {
         super.addMenus();
         deviceMenu = new JMenu("Devices");
@@ -60,21 +62,42 @@ public class MobileDeviceFormV14 extends MobileDeviceFormV13 {
     @Override
     public void actionPerformed(ActionEvent e){
         super.actionPerformed(e);
-        String str = "";
+        String displayDevice = "";
         if(e.getSource().equals(displayMenuItem)) {
-            for(int i=1;i<deviceList.size();i++){
-                str = str + deviceList.get(i) + "\n";
+            for(int i=0;i<deviceList.size();i++){
+                displayDevice = displayDevice + deviceList.get(i) + "\n";
             }
-            JOptionPane.showMessageDialog(null,str);
+            JOptionPane.showMessageDialog(null,displayDevice);
         }
         else if(e.getSource().equals(sortMenuItem)){
-            JOptionPane.showMessageDialog(null);
+            Collections.sort(deviceList, new SortMobileDevicesByPrice());
+            for(int i=1;i<deviceList.size();i++){
+                displayDevice = displayDevice + deviceList.get(i) + "\n";
+            }
+            JOptionPane.showMessageDialog(null,displayDevice);
         }
         else if(e.getSource().equals(searchMenuItem)){
-
+            String searchText = JOptionPane.showInputDialog(null, "Enter model name to serch");
+            for(int i=0 ;i < deviceList.size();i++) {
+                if(deviceList.get(i).getModel().equals(searchText)) {
+                    JOptionPane.showMessageDialog(null, deviceList.get(i) + " is found");
+                }
+                else {
+                    JOptionPane.showMessageDialog(null, searchText + " is not found");
+                }
+            }
         }
         else if(e.getSource().equals(removeMenuItem)){
-
+            String removeText = JOptionPane.showInputDialog(null, "Enter model name to remove");
+            for(int i=0 ;i < deviceList.size();i++) {
+                if(deviceList.get(i).getModel().equals(removeText)) {
+                    deviceList.remove(i);
+                    JOptionPane.showMessageDialog(null, deviceList.get(i) + " is removed");
+                }
+                else {
+                    JOptionPane.showMessageDialog(null, removeText + " is not found");
+                }
+            }
         }
     }
 

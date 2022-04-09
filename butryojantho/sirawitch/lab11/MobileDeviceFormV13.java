@@ -36,12 +36,6 @@ public class MobileDeviceFormV13 extends MobileDeviceFormV12 {
     // create GUI
 
     @Override
-    protected void addListeners() {
-        super.addListeners();
-        okButton.addActionListener(this);
-    }
-
-    @Override
     public void actionPerformed(ActionEvent e) {
         super.actionPerformed(e);
         android.setActionCommand("Android");

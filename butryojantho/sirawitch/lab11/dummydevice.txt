@@ -1,0 +1,5 @@
+1.Brand Name : Apple, Model Name : iPad Air, Color : Silver, Weight : 0.469, Price : 24900.0, Mobile OS : iOS, Type : Tablet
+2.Brand Name : Samsung, Model Name : S22, Color : Black, Weight : 0.25, Price : 31000.0, Mobile OS : Android, Type : Phone
+3.Brand Name : OnePlus, Model Name : Nord CE, Color : Chacoal Ink, Weight : 0.172, Price : 14900.0, Mobile OS : Android, Type : Phone
+4.Brand Name : Apple, Model Name : iPhone 13 Pro Max, Color : Green alpine, Weight : 0.24, Price : 49900.0, Mobile OS : iOS, Type : Phone
+5.Brand Name : Apple, Model Name : Apple Watch Series 7, Color : Red, Weight : 0.032, Price : 13900.0, Mobile OS : iOS, Type : Smart Watch
